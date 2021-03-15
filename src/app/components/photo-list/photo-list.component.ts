@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PhotoListService } from '../../services/photo-list.service';
+import { IPic } from '../../models/Pic';
 
 @Component({
   selector: 'app-photo-list',
   templateUrl: './photo-list.component.html',
-  styleUrls: ['./photo-list.component.scss']
+  styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit {
+  constructor(private photoList: PhotoListService) {}
 
-  constructor() { }
+  // properties
+  public pics$!: Observable<IPic[]>;
 
-  ngOnInit(): void {
+  // fetch pics
+  public getPics(): void {
+    this.pics$ = this.photoList.getPics();
   }
 
+  ngOnInit(): void {
+    this.getPics();
+  }
 }
