@@ -10,7 +10,7 @@ import { IPic } from '../models/Pic';
 export class PhotoListService {
   constructor(public http: HttpClient) {}
 
-  // fetch pics from API
+  // API call
   public getPics(): Observable<IPic[]> {
     const loremPicsumURL = 'https://picsum.photos/v2/list?&limit=16';
     return this.http.get<IPic[]>(loremPicsumURL);

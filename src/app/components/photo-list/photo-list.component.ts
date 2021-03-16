@@ -13,10 +13,14 @@ export class PhotoListComponent implements OnInit {
 
   // properties
   public pics$!: Observable<IPic[]>;
+  public pics = [] as any;
 
   // fetch pics
   public getPics(): void {
-    this.pics$ = this.photoList.getPics();
+    this.photoList.getPics().subscribe((data) => {
+      this.pics = data;
+      console.log('bloop:', data);
+    });
   }
 
   ngOnInit(): void {
