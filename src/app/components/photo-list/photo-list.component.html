@@ -1,33 +1,9 @@
 <div class="photo-container">
   <ul>
-    <li>
+    <li *ngFor="let pic of pics">
       <button type="button">
-        <img src="https://picsum.photos/200/300" alt="image here" />
-        <p>Author: author name</p>
-      </button>
-    </li>
-    <li>
-      <button type="button">
-        <img src="https://picsum.photos/200/300" alt="image here" />
-        <p>Author: author name</p>
-      </button>
-    </li>
-    <li>
-      <button type="button">
-        <img src="https://picsum.photos/200/300" alt="image here" />
-        <p>Author: author name</p>
-      </button>
-    </li>
-    <li>
-      <button type="button">
-        <img src="https://picsum.photos/200/300" alt="image here" />
-        <p>Author: author name</p>
-      </button>
-    </li>
-    <li>
-      <button type="button">
-        <img src="https://picsum.photos/200/300" alt="image here" />
-        <p>Author: author name</p>
+        <img [src]="pic.download_url" alt="image here" />
+        <p>Author: {{ pic.author }}</p>
       </button>
     </li>
   </ul>
