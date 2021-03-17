@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IPic } from '../../models/Pic';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { PhotoListService } from '../../services/photo-list.service';
-import { IPic } from '../../models/Pic';
 
 @Component({
   selector: 'app-photo-list',
@@ -9,7 +10,12 @@ import { IPic } from '../../models/Pic';
   styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit {
-  constructor(private photoList: PhotoListService) {}
+  public closeResult!: string;
+
+  constructor(
+    private photoList: PhotoListService,
+    private modalService: NgbModal
+  ) {}
 
   // properties
   public pics$!: Observable<IPic[]>;
@@ -21,6 +27,31 @@ export class PhotoListComponent implements OnInit {
       this.pics = data;
       console.log('bloop:', data);
     });
+  }
+
+  // handle modal open
+  public open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  // handle modal close
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
   ngOnInit(): void {
