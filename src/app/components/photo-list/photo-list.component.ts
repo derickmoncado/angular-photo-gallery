@@ -10,8 +10,6 @@ import { PhotoListService } from '../../services/photo-list.service';
   styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit {
-  public closeResult!: string;
-
   constructor(
     private photoList: PhotoListService,
     private modalService: NgbModal
@@ -20,6 +18,7 @@ export class PhotoListComponent implements OnInit {
   // properties
   public pics$!: Observable<IPic[]>;
   public pics = [] as any;
+  public closeResult!: string;
 
   // fetch pics
   public getPics(): void {
