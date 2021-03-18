@@ -2,7 +2,10 @@
   <!-- Photo List -->
   <ul>
     <li *ngFor="let pic of pics">
-      <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+      <button
+        class="btn btn-lg btn-outline-primary"
+        (click)="open(content, pic)"
+      >
         <img [src]="pic.download_url" alt="image here" />
         <p>Author: {{ pic.author }}</p>
         <p>ID: {{ pic.id }}</p>
@@ -13,7 +16,9 @@
   <!-- Modal -->
   <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Image author name</h4>
+      <h4 class="modal-title" id="modal-basic-title">
+        Author: {{ selectedPic?.author }}
+      </h4>
       <button
         type="button"
         class="close"
@@ -24,7 +29,11 @@
       </button>
     </div>
     <div class="modal-body">
-      Image goes here
+      <img
+        [src]="selectedPic?.download_url"
+        alt="image here"
+        style="max-height: 100%; max-width: 100%;"
+      />
     </div>
   </ng-template>
 </div>

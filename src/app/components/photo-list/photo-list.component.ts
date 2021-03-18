@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { IPic } from '../../models/Pic';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { PhotoListService } from '../../services/photo-list.service';
 
 @Component({
@@ -16,27 +17,32 @@ export class PhotoListComponent implements OnInit {
   ) {}
 
   // properties
-  public pics$!: Observable<IPic[]>;
-  public pics = [] as any;
+  public pics: IPic[] = [];
   public closeResult!: string;
+  public selectedPic: IPic | null = null;
 
   // fetch pics
   public getPics(): void {
-    this.photoList.getPics().subscribe((data) => {
-      this.pics = data;
-      console.log('bloop:', data);
-    });
+    this.photoList
+      .getPics()
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.pics = data;
+      });
   }
 
   // handle modal open
-  public open(content: any) {
+  public open(content: TemplateRef<any>, pic: IPic) {
+    this.selectedPic = pic;
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg' })
       .result.then(
         (result) => {
+          this.selectedPic = null;
           this.closeResult = `Closed with: ${result}`;
         },
         (reason) => {
+          this.selectedPic = null;
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         }
       );
