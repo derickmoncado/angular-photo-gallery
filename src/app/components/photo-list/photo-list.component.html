@@ -2,13 +2,14 @@
   <!-- Photo List -->
   <ul>
     <li *ngFor="let pic of pics">
+      <button class="deleteBtn" type="button">delete</button>
       <button
         class="btn btn-lg btn-outline-primary"
         (click)="open(content, pic)"
       >
         <img [src]="pic.url" alt="image here" />
-        <p>Title: {{ pic.title }}</p>
       </button>
+      <p>Title: {{ pic.title }}</p>
     </li>
   </ul>
 

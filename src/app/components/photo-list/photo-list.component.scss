@@ -9,14 +9,34 @@
 
     li {
       width: 50%;
-      padding-bottom: 10px;
+      padding: 12px;
+      text-align: center;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       flex-direction: column;
+      position: relative;
+
+      .deleteBtn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 4px 10px;
+        display: none;
+        background-color: #ff0000;
+        color: #fff;
+
+        &:hover {
+          background: darken(#ff0000, 8%);
+        }
+      }
+
+      p {
+        font-size: 12px;
+        margin-bottom: 0;
+      }
 
       button {
-        margin-bottom: 10px;
         background: none;
         border: none;
         border-radius: 0;
@@ -29,11 +49,6 @@
           padding-bottom: 10px;
         }
 
-        p {
-          font-size: 12px;
-          margin-bottom: 0;
-        }
-
         &:focus,
         &.active {
           background: none !important;
@@ -44,6 +59,10 @@
       &:hover {
         cursor: pointer;
         background: #f2f2f2;
+
+        .deleteBtn {
+          display: block;
+        }
       }
 
       &:last-child {
@@ -51,5 +70,13 @@
         padding-bottom: 0;
       }
     }
+  }
+}
+
+.modal-body {
+  text-align: center;
+
+  img {
+    margin: 0 auto;
   }
 }
