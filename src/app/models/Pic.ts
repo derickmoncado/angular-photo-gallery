@@ -1,8 +1,7 @@
 export interface IPic {
+  albumId: number;
   id: number;
-  author: string;
-  width: number;
-  height: number;
+  title: string;
   url: string;
-  download_url: string;
+  thumbnailUrl: string;
 }

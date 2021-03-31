@@ -6,8 +6,8 @@
         class="btn btn-lg btn-outline-primary"
         (click)="open(content, pic)"
       >
-        <img [src]="pic.download_url" alt="image here" />
-        <p>Author: {{ pic.author }}</p>
+        <img [src]="pic.url" alt="image here" />
+        <p>Title: {{ pic.title }}</p>
       </button>
     </li>
   </ul>
@@ -16,7 +16,7 @@
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">
-        Author: {{ selectedPic?.author }}
+        Title: {{ selectedPic?.title }}
       </h4>
       <button
         type="button"
@@ -29,7 +29,7 @@
     </div>
     <div class="modal-body">
       <img
-        [src]="selectedPic?.download_url"
+        [src]="selectedPic?.url"
         alt="image here"
         style="max-height: 100%; max-width: 100%;"
       />

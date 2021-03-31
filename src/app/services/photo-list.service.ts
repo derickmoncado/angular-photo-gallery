@@ -11,7 +11,7 @@ export class PhotoListService {
 
   // API call
   public getPics(): Observable<IPic[]> {
-    const loremPicsumURL = 'https://picsum.photos/v2/list?&limit=16';
+    const loremPicsumURL = 'https://jsonplaceholder.typicode.com/photos';
     return this.http.get<IPic[]>(loremPicsumURL);
   }
 }
