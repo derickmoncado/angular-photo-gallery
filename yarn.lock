@@ -198,7 +198,7 @@
   dependencies:
     "tslib" "^2.0.0"
 
-"@angular/core@^11.0.0", "@angular/core@>=2.0.0 || >=4.0.0 || >=5.0.0", "@angular/core@>=2.3.1 <12.0.0 || ^11.0.0-next || ^11.1.0-next || ^11.2.0-next", "@angular/core@~11.2.5", "@angular/core@11.2.5":
+"@angular/core@^11.0.0", "@angular/core@>=2.3.1 <12.0.0 || ^11.0.0-next || ^11.1.0-next || ^11.2.0-next", "@angular/core@~11.2.5", "@angular/core@11.2.5":
   "integrity" "sha512-YL1+SNCKx2yFpn6ohC2VbPSguLzFtk+dTzujARN+BkaPJfrUDz08IgEVyeHMXLNCFFjxRKAsEaRTXGz5CEYFag=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-11.2.5.tgz"
   "version" "11.2.5"
@@ -1664,11 +1664,6 @@
   "integrity" "sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM="
   "resolved" "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   "version" "1.0.2"
-
-"angular-font-awesome@^3.1.2":
-  "integrity" "sha1-k3hzJhLY6MceDXwvqg+t3H+Fjsk="
-  "resolved" "https://registry.npmjs.org/angular-font-awesome/-/angular-font-awesome-3.1.2.tgz"
-  "version" "3.1.2"
 
 "ansi-colors@^3.0.0":
   "integrity" "sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA=="
@@ -4064,11 +4059,6 @@
   "integrity" "sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.13.3.tgz"
   "version" "1.13.3"
-
-"font-awesome@^4.7.0":
-  "integrity" "sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM="
-  "resolved" "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz"
-  "version" "4.7.0"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
