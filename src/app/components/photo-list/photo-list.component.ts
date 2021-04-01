@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { PhotoListService } from '../../services/photo-list.service';
 
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-photo-list',
   templateUrl: './photo-list.component.html',
@@ -20,6 +22,7 @@ export class PhotoListComponent implements OnInit {
   public pics: IPic[] = [];
   public closeResult!: string;
   public selectedPic: IPic | null = null;
+  public faTrash = faTrash;
 
   // fetch pics
   public getPics(): void {
