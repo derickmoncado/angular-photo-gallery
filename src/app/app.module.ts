@@ -7,9 +7,17 @@ import { AppComponent } from './app.component';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [AppComponent, PhotoListComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgbModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
