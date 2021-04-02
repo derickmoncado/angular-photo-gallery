@@ -14,4 +14,10 @@ export class PhotoListService {
     const loremPicsumURL = 'https://jsonplaceholder.typicode.com/photos';
     return this.http.get<IPic[]>(loremPicsumURL);
   }
+
+  // Handle delete
+  public handleDelete(id: number) {
+    const deleteEndpoint = `https://jsonplaceholder.typicode.com/posts/${id}`;
+    return this.http.delete(deleteEndpoint);
+  }
 }

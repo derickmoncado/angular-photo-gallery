@@ -2,7 +2,7 @@
   <!-- Photo List -->
   <ul>
     <li *ngFor="let pic of pics">
-      <button class="deleteBtn" type="button">
+      <button class="deleteBtn" type="button" (click)="handleDelete(pic.id)">
         <fa-icon [icon]="faTrash"></fa-icon>
       </button>
       <i class="far fa-surprise"></i>

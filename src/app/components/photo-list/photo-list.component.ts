@@ -34,6 +34,13 @@ export class PhotoListComponent implements OnInit {
       });
   }
 
+  // Handle delete
+  public handleDelete(id: number) {
+    this.photoList.handleDelete(id).subscribe((data) => {
+      console.log('did it delete?', data);
+    });
+  }
+
   // handle modal open
   public open(content: TemplateRef<any>, pic: IPic) {
     this.selectedPic = pic;
